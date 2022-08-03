@@ -30,39 +30,46 @@ void folder(void) {
   extern char input[];
   extern char output[];
   int i, i2, cntr;
-  
+
   for (i = i2 = cntr = 0; input[i] != '\0'; ++cntr) {
-    // if input[i] reaches the last column and input[i] equals a alphabet character, then append a "-\n" to output 
+    // if last column and input[i] is alphabet character and input[i - 1] is alphabet character, then output[i2++] = '-' and output[i2++] = '\n'
     if (cntr != 0 && cntr % (LASTCOL) == 0 && (input[i] < 121 && input[i] > 65) && (input[i - 1] < 121 && input[i - 1] > 65)) {
       output[i2++] = '-';
       output[i2++] = '\n';
       cntr = 0;
-      // skip whitespace
       i = skip_blank(i);
+      output[i2++] = input[i++];
     }
-    // if input[i] == '.' or something like that, then include then append the period and add a newline
+    // if input[i] is punctuation
     else if (cntr != 0 && cntr % (LASTCOL) == 0 && (input[i] > 43 && input[i] < 48) || (input[i] > 57 && input[i] < 60)) {
       output[i2++] = input[i++];
       output[i2++] = '\n';
       cntr = 0;
-      // skip whitespace
       i = skip_blank(i);
+      output[i2++] = input[i++];
     }
     else if (cntr != 0 && cntr % (LASTCOL) == 0) {
-      output[i2++] = ' ';
       output[i2++] = '\n';
       cntr = 0;
-      // skip whitespace
       i = skip_blank(i);
-    } 
-    output[i2++] = input[i++];
+      output[i2++] = input[i++];
+    }
+    else {
+      output[i2++] = input[i++];
+    }
   }
 }
+
+/*
+[0 ][1 ][2 ][3 ][4 ][5 ][6 ][7 ][8 ][9 ][10][11][12][13][14][15][16][17][18][19][20]
+[e ][  ][l ][o ][a ][d ][e ][d ][  ][s ][o ][l ][d ][i ][e ][r ][s ][, ][  ][p ][- ]
+[a ][c ][k ][i ][n ][g ][  ][h ][e ][a ][t ][. ][  ][I ][n ][s ][i ][d ][e ][  ][\n] 
+*/
 
 int skip_blank(int i) {
   extern char input[];
 
-  while (input[i] == ' ' || input[i] == '\t' || input[i] == '\n') {
+  while (input[i] == ' ' || input[i] == '\n') {
     ++i;
   }
   return i;
