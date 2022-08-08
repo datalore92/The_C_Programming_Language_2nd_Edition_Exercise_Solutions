@@ -1,4 +1,6 @@
 #include <stdio.h>
+// Section 2.7 Page 43, the book says: "We will use the <ctype.h> functions from now on."
+#include <ctype.h>
 
 /* squeeze: delete all c from s 
 void squeeze(char s[], int c) {
