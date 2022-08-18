@@ -6,17 +6,17 @@
 where a floating-point number may be followed by e or E and an optionally 
 signed exponent. */
 
-double atof(char[]);
+double atof(const char[]);
 
 int main(void) {
-    char s1[] = "101.55e-1";
-    char s2[] = "-102.55e-2";
-    char s3[] = "+103.56e-3";
-    char s4[] = "104.55e4";
-    char s5[] = "-105.54e+5";
-    char s6[] = "+106.52e7";
-    char s7[] = "100";
-    char s8[] = "-100";
+    const char s1[] = "101.55e-1";
+    const char s2[] = "-102.55e-2";
+    const char s3[] = "+103.56e-3";
+    const char s4[] = "104.55e4";
+    const char s5[] = "-105.54e+5";
+    const char s6[] = "+106.52e7";
+    const char s7[] = "100";
+    const char s8[] = "-100";
 
     printf("%f\n", atof(s1));
     printf("%f\n", atof(s2));
@@ -30,7 +30,7 @@ int main(void) {
     return 0;
 }
 
-double atof(char s[]) {
+double atof(const char s[]) {
     double val, power;
     unsigned i, power_2;
     char sign;
