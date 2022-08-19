@@ -6,19 +6,29 @@
 #define MAXOP       100 // max size of operand or operator
 #define NUMBER      '0' // signal that a number was found
 
-/* Exercise 4-3: Given the basic framework, it's straightforward to extend the 
-calculator. Add the modulus (%) operator and provisions for negative numbers */
+/* Exercise 4-4: Add commands to print the top element of the stack without 
+popping, to duplicate it, and to swap the top two elements. Add a command to 
+clear the stack */
+
+// command p: print the top element of the stack without popping
+// command d: duplicate the top element of the stack
+// command s: swap the top two elements of the stack
+// command c: clear the stack
 
 char buf[BUFSIZE];      // buffer for ungetch
 int bufp = 0;           // next free position in buf
 int sp = 0;             // next free stack position
 double val[MAXVAL];     // value stack
-
+ 
 int getch(void);        // get a (possibly pushed back) character
 void ungetch(int);      // push character back on input
 int getop(char[]);      // get next operator or numeric operand
 void push(double);      // push f onto value stack
 double pop(void);       // pop and return top value from stack
+void print_top(void);   // prints the top element of the stack without popping
+void duplicate(void);   // duplicates the top element of the stack
+void swap(void);        // swaps the top two elements of the stack
+void clear(void);       // clears the stack
 
 int main(void) {
     int type, op1_int, op2_int;
@@ -62,6 +72,18 @@ int main(void) {
             case '\n':
                 printf("\t%.8g\n", pop());
                 break;
+            case 'p':
+                print_top();
+                break;
+            case 'd':
+                duplicate();
+                break;
+            case 's':
+                swap();
+                break;
+            case 'c':
+                clear();
+                break;
             default:
                 printf("error: unknown command %s\n", s);
                 break;
@@ -90,6 +112,18 @@ int getop(char s[]) {                                   // get next operator or 
         ;
     }
     s[1] = '\0';
+    if (c == 'p') {
+        return c;
+    }
+    if (c == 'd') {
+        return c;
+    }
+    if (c == 's') {
+        return c;
+    }
+    if (c == 'c') {
+        return c;
+    }
     if (!isdigit(c) && c != '.' && c != '-') {
         return c;                                       // not a number
     }
@@ -131,4 +165,38 @@ double pop(void) {                                      // pop and return top va
         printf("error: stack empty\n");
         return 0.0;
     }
+}
+
+void duplicate(void) {                                  // duplicates the top element of the stack
+    if (sp > 0) {
+        val[sp] = val[sp - 1];
+        ++sp;
+    }
+    else {
+        printf("error: stack empty\n");
+    }
+}
+
+void print_top(void) {                                  // prints the top element of the stack without popping it
+    if (sp > 0) {
+        printf("%f\n", val[sp - 1]);
+    }
+    else {
+        printf("error: stack empty\n");
+    }
+}
+
+void swap(void) {                                       // swaps the top two elements of the stack
+    if (sp > 1) {
+        int i = val[sp - 2];
+        val[sp - 2] = val[sp - 1];
+        val[sp - 1] = i;
+    }
+    else {
+        printf("error: not enough values in stack\n");
+    }
+}
+
+void clear(void) {                                      // clears the stack
+    sp = 0;
 }
