@@ -33,8 +33,6 @@ void reverse(char s[]) {
         --j;
         reverse(s);
     }
-    else {
-        i = 0;
-    }
+    i = 0;
     --levels;
 }
