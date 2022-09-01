@@ -9,6 +9,10 @@ argument. For example, expr 2 3 4 + * evaluates 2 * (3 + 4). */
 /* This took me like all day to write but I think I learned a lot and have a much 
 better understanding of pointers */
 
+/*NOTE: Using * messes it up somehow, something to do with regular expressions and Bash I think. 
+So I guess you want to use 'x' instead of '*', or if you do use '*', be sure to add single quotes around 
+the '*' and it will work. */
+
 // example arguments and their results for testing
 // 4 3 2 - * == 4 * (3 - 2) == 4
 // -2 -3 -4 + * == -2 * (-3 + -4) == 14
