@@ -1,16 +1,7 @@
-This repository contains my solutions to the exercises in The C Programming Language 
-Second Edition by Brian W. Kernighan and Dennis M. Ritchie.
+This repository contains my solutions to the exercises in The C Programming Language Second Edition by Brian W. Kernighan and Dennis M. Ritchie.
 
-09-02-22 - NOTE:   I need to like redo all the "entab" and "detab" programs from chapter 1 and chapter 5 because 
-I thought I was doing them the right way but turns out I actually misread the directions or somehow 
-misunderstood the exercise even though I thought I was doing them right.  So I'm just gonna either not 
+09-02-22 - NOTE:   I need to like redo all the "entab" and "detab" programs from chapter 1 and chapter 5 because I thought I was doing them the right way but turns out I actually misread the directions or somehow misunderstood the exercise even though I thought I was doing them right.  So I'm just gonna either not 
 do them right now, or forget about them or something.
 
-09-02-22 - NOTE:    As of reaching Chapter 5, Exercise 14, I'm beginning to feel a bit overwhelmed with the exercises. 
-I feel like I might need some kind of supplementary learning material for learning this programming language. I think I might start a 
-repository for going through C Programming: A Modern Approach (2nd Edition) by K.N. King (2008), as that is an introductory book listed 
-in The Definitive C Book Guide and List on stackoverflow; https://stackoverflow.com/questions/562303/the-definitive-c-book-guide-and-list 
-and I think it might be better to just maybe pick 1 or 2 books from each section in that link and go through them, rather than just only going 
-through the K&R C Programming Language book. I feel like with just this K&R book, I'm sloppily getting by each chapter and exercise. I think 
-with some kind of additional resource to work through, then it will help instill what I've learned a bit better and make me feel more confident 
+09-02-22 - NOTE:    As of reaching Chapter 5, Exercise 14, I'm beginning to feel a bit overwhelmed with the exercises. I feel like I might need some kind of supplementary learning material for learning this programming language. I think I might start a repository for going through C Programming: A Modern Approach (2nd Edition) by K.N. King (2008), as that is an introductory book listed in The Definitive C Book Guide and List on stackoverflow; https://stackoverflow.com/questions/562303/the-definitive-c-book-guide-and-list and I think it might be better to just maybe pick 1 or 2 books from each section in that link and go through them, rather than just only going through the K&R C Programming Language book. I feel like with just this K&R book, I'm sloppily getting by each chapter and exercise. I think with some kind of additional resource to work through, then it will help instill what I've learned a bit better and make me feel more confident 
 with this language.
